@@ -41,7 +41,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/devops-atividadecicd:latest
+          tags: ghcr.io/${{ github.repository_owner || github.actor }}
+            | toLowerCase }}/devops-atividadecicd:latest
 
   deploy-staging:
     name: Deploy em Homologação
